@@ -16,7 +16,7 @@ Environment variable **ENV** defines the target environment to test (e.g. _QA_, 
 
 ## Image Details
 
-The Docker image is based on `Node:slim` and upon build installs all the required Node.js Modules (as listed in `package.json`) along with shared dependencies for `electron` and `xvfb` ([X virtual framebuffer](https://en.wikipedia.org/wiki/Xvfb)) required for headless browser testing.
+The Docker image is based on `Node:slim` and upon build installs all the required Node.js Modules (as listed in [`package.json`](package.json))) along with shared dependencies for `electron` and `xvfb` ([X virtual framebuffer](https://en.wikipedia.org/wiki/Xvfb)) required for headless browser testing.
 
 The Docker image neither installs nor uses any local modules from `node_modules` in `${PWF}`.
 
@@ -25,4 +25,4 @@ Any references to local `node_modules` should thus be avoided:
 ~~`var chakram = require('../../node_modules/chakram/lib/chakram.js')`~~
  `var chakram = require('chakram')`
 
- The Docker images executes command `npm run test` to run the tests.
+ The Docker image is configured to execute command `npm run test` upon running.
