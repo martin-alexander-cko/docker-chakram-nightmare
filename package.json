@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "chai": "^4.1.2",
+    "chakram": "^1.5.0",
+    "chakram-joi": "^1.0.0",
+    "cli-table": "^0.3.1",
+    "colors": "^1.1.2",
+    "glob": "^7.1.2",
+    "mocha": "3.5.0",
+    "mocha-cakes-2": "^2.1.0",
+    "mocha-parallel-tests": "^1.2.9",
+    "mochawesome": "^2.3.1",
+    "nightmare": "^2.10.0",
+    "nightmare-wait-for-url": "0.0.2",
+    "process-env": "^1.1.0",
+    "electron": "^1.8.4"
+  }
+}
