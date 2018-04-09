@@ -19,3 +19,6 @@ RUN apt-get update && apt-get install -y \
         xvfb
 
 ENV NODE_PATH /etc/node/node_modules/
+WORKDIR /usr/src/app
+
+CMD xvfb-run -a --server-args='-screen 0 1366x768x24' npm run test
