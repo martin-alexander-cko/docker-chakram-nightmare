@@ -1,2 +1,2 @@
-docker build -t vladimiraleksandrovcko/dotnet-chakram-nightmare:slim .
-docker push vladimiraleksandrovcko/dotnet-chakram-nightmare:slim
+docker build -t vladimiraleksandrovcko/docker-chakram-nightmare:latest .
+docker push vladimiraleksandrovcko/docker-chakram-nightmare:latest
