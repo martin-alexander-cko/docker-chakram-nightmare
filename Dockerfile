@@ -4,10 +4,10 @@ FROM node:9.11-slim
 COPY ./package.json /etc/node/package.json
 WORKDIR /etc/node
 
-# Install Node.js packages fron packages.json 
+# Install Node.js packages from packages.json 
 RUN npm install
 
-# Install shared libraries for xfvb and electron
+# Install shared libraries for xvfb and electron
 RUN apt-get update && apt-get install -y \
         libgtk2.0-0 \
         libx11-xcb1 \
