@@ -16,11 +16,11 @@ Environment variable **ENV** defines the target environment to test (e.g. _QA_, 
 
 ## Image Details
 
-The Docker image is based on `Node:slim` and upon build installs all the required Node.js Modules (as listed in [`package.json`](package.json))) along with shared dependencies for `electron` and `xvfb` ([X virtual framebuffer](https://en.wikipedia.org/wiki/Xvfb)) required for headless browser testing.
+The Docker image is based on `Node:slim` and upon build installs all the required Node.js Modules (as listed in [`package.json`](package.json)) along with shared dependencies for `electron` and `xvfb` ([X virtual framebuffer](https://en.wikipedia.org/wiki/Xvfb)) required for headless browser testing.
 
-The Docker image neither installs nor uses any local modules from `node_modules` in `${PWF}`.
+Current directory should not contain a folder `node_modules` as local modules may conflict with the modules in the Docker image, which is especially the case with module `electron` used by `Nightmare` tests.
 
-Any references to local `node_modules` should thus be avoided:
+Any references to local `node_modules` should also be avoided:
 
 ~~`var chakram = require('../../node_modules/chakram/lib/chakram.js')`~~
  `var chakram = require('chakram')`
