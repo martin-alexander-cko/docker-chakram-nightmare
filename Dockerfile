@@ -1,4 +1,4 @@
-FROM node:slim
+FROM node:9.11-slim
 
 
 COPY ./package.json /etc/node/package.json
