@@ -9,6 +9,7 @@
     "mocha": "3.5.0",
     "mocha-cakes-2": "^2.1.0",
     "mocha-parallel-tests": "^1.2.9",
+    "mocha-teamcity-reporter": "^2.2.2",
     "mochawesome": "^2.3.1",
     "nightmare": "^2.10.0",
     "nightmare-wait-for-url": "0.0.2",
