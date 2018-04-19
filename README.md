@@ -20,6 +20,8 @@ To execute another command, e.g. `node test/mochaScript.js`, prepend it with com
 docker run -e MOCHA_GREP=@regression -e ENV=QA --rm -t -v ${PWD}:/usr/src/app vladimiraleksandrovcko/docker-chakram-nightmare:9.11-slim-tc /bin/sh -c 'xvfb-run node test/mochaScript.js'
 ```
 
+**The use of `xvfb-run` in `/bin/sh` is required for Nightmare tests.**
+
 ## Image Details
 
 The Docker image is based on `node:9.11-slim` (see [official Node.js repository](https://hub.docker.com/_/node/)) and upon build installs all the required Node.js Modules (as listed in [`package.json`](package.json)) along with shared dependencies for `electron` and `xvfb` ([X virtual framebuffer](https://en.wikipedia.org/wiki/Xvfb)) required for headless browser testing.
