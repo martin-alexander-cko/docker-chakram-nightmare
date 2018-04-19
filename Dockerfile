@@ -21,4 +21,5 @@ ENV NODE_PATH /etc/node/node_modules/
 WORKDIR /usr/src/app
 
 # Start 'npm run test' in a virtual X server environment
-CMD xvfb-run -a --server-args='-screen 0 1366x768x24' npm run test
+ENTRYPOINT [ "xvfb-run", "-a", "--server-args='-screen 0 1366x768x24'" ]
+CMD npm run test
