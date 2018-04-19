@@ -14,6 +14,12 @@ Environment variable **ENV** defines the target environment to test (e.g. _QA_, 
 
 A _mochawesome_ test report will be saved in the current directory as specified by `${PWD}`. The Docker image is configured to execute command `xvfb-run npm run test` upon running. 
 
+To execute another command, e.g. `node test/mochaScript.js`, prepend it with command `xvfb-run` and execute in `/bin/sh -c` as follows:
+
+```bash
+docker run -e MOCHA_GREP=@regression -e ENV=QA --rm -t -v ${PWD}:/usr/src/app vladimiraleksandrovcko/docker-chakram-nightmare:9.11-slim-tc /bin/sh -c 'xvfb-run node test/mochaScript.js'
+```
+
 ## Image Details
 
 The Docker image is based on `node:9.11-slim` (see [official Node.js repository](https://hub.docker.com/_/node/)) and upon build installs all the required Node.js Modules (as listed in [`package.json`](package.json)) along with shared dependencies for `electron` and `xvfb` ([X virtual framebuffer](https://en.wikipedia.org/wiki/Xvfb)) required for headless browser testing.
