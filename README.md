@@ -25,4 +25,7 @@ Any references to local `node_modules` should also be avoided:
 ~~`var chakram = require('../../node_modules/chakram/lib/chakram.js')`~~
  `var chakram = require('chakram')`
 
- The Docker image is configured to execute command `npm run test` upon running.
+ The Docker image is configured to execute command `npm run test` upon running
+
+entrypoint.sh with xvfb is borrowed from https://github.com/ivanvanderbyl/docker-nightmare
+

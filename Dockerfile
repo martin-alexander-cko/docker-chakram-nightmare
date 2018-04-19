@@ -20,6 +20,9 @@ RUN apt-get update && apt-get install -y \
 ENV NODE_PATH /etc/node/node_modules/
 WORKDIR /usr/src/app
 
+COPY ./entrypoint.sh /entrypoint
+
 # Start 'npm run test' in a virtual X server environment
-ENTRYPOINT [ "xvfb-run", "-a", "--server-args='-screen 0 1366x768x24'" ]
-CMD npm run test
+RUN chmod +x /entrypoint
+ENTRYPOINT [ "/entrypoint" ]
+CMD ["npm","run","test"]
