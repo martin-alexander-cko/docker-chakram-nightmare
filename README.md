@@ -12,15 +12,7 @@ docker run -e MOCHA_GREP=@regression -e ENV=QA --rm -t -v ${PWD}:/usr/src/app vl
 
 Environment variable **ENV** defines the target environment to test (e.g. _QA_, _DEV_), while environment variable **MOCHA_GREP** specifies the test scope. 
 
-A _mochawesome_ test report will be saved in the current directory as specified by `${PWD}`. The Docker image is configured to execute command `npm run test` upon running. 
-
-To execute another command, e.g. `node test/mochaScript.js`, prepend it with command `xvfb-run` and pass it as follows:
-
-```bash
-docker run -e MOCHA_GREP=@regression -e ENV=QA --rm -t -v ${PWD}:/usr/src/app vladimiraleksandrovcko/docker-chakram-nightmare:9.11-slim-tc xvfb-run node test/mochaScript.js
-```
-
-Note the use of `xvfb-run` before the actual command: this is required for [Nightmare](https://github.com/segmentio/nightmare) tests.
+A _mochawesome_ test report will be saved in the current directory as specified by `${PWD}`. The Docker image is configured to execute command `xvfb-run npm run test` upon running. 
 
 ## Image Details
 
