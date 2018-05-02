@@ -15,6 +15,7 @@
     "nightmare-wait-for-url": "0.0.2",
     "process-env": "^1.1.0",
     "electron": "^1.8.4",
-    "localtunnel": "^1.9.0"
+    "localtunnel": "^1.9.0",
+    "cpf": "^1.0.4"
   }
 }
