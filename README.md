@@ -24,7 +24,7 @@ docker run -e MOCHA_GREP=@regression -e ENV=QA --rm -t -v ${PWD}:/usr/src/app vl
 
 ## Image Details
 
-The Docker image is based on `node:9.11-slim` (see [official Node.js repository](https://hub.docker.com/_/node/)) and upon build installs all the required Node.js Modules (as listed in [`package.json`](package.json)) along with shared dependencies for `electron` and `xvfb` ([X virtual framebuffer](https://en.wikipedia.org/wiki/Xvfb)) required for headless browser testing.
+The Docker image located in [slim-tc](slim-tc) is based on `node:9.11-slim` (see [official Node.js repository](https://hub.docker.com/_/node/)) and upon build installs all the required Node.js Modules (as listed in [`package.json`](package.json)) along with shared dependencies for `electron` and `xvfb` ([X virtual framebuffer](https://en.wikipedia.org/wiki/Xvfb)) required for headless browser testing.
 
 Current directory should not contain a folder `node_modules` as local modules may conflict with the modules in the Docker image, which is especially the case with module `electron` used by `Nightmare` tests.
 
@@ -33,3 +33,4 @@ Any references to local `node_modules` should also be avoided:
 ~~`var chakram = require('../../node_modules/chakram/lib/chakram.js')`~~
  `var chakram = require('chakram')`
 
+There's another Docker image vladimiraleksandrovcko/docker-chakram-nightmare:dotnet-2.1.302-node-10.7.0, located in [dotnet-node](dotnet-node) which is based on top of danielmunchcko/dotnet:2.1.302-node-10.7.0 and thus contains a completed .NET Core SDK.
